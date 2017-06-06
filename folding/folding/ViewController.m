@@ -83,20 +83,18 @@ double c = 100;
     
     trans.m34 = 1/500.0;
     CATransform3D rotateTransform = CATransform3DRotate(trans, -M_PI *(pX/500), 0, 1, 0);
-    // 移动(这里的y坐标是平面移动的的距离,我们要把他转换成3D移动的距离.这是关键,没有它,图片就没办法很好地对接。)
+
     imgView.layer.transform =rotateTransform;
     
     CATransform3D rtrans = rightImgView.layer.transform;
     rtrans.m34 = 1/500.0;
     CATransform3D rrotateTransform = CATransform3DRotate(rtrans, M_PI *(pX/500), 0, 1, 0);
-    // 移动(这里的y坐标是平面移动的的距离,我们要把他转换成3D移动的距离.这是关键,没有它,图片就没办法很好地对接。)
     rightImgView.layer.transform =rrotateTransform;
     
     
     CATransform3D lstrans = lastImgView.layer.transform;
     lstrans.m34 = 1/500.0;
     CATransform3D lsrotateTransform = CATransform3DRotate(lstrans, - M_PI *(pX/500), 0, 1, 0);
-    // 移动(这里的y坐标是平面移动的的距离,我们要把他转换成3D移动的距离.这是关键,没有它,图片就没办法很好地对接。)
 
     lastImgView.layer.transform =lsrotateTransform;
     
