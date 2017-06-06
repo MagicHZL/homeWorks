@@ -64,6 +64,7 @@
 }
 
 double a = 100;
+double b = 100;
 double c = 100;
 
 -(void)panAction:(UIPanGestureRecognizer*)pan{
@@ -184,7 +185,7 @@ double c = 100;
         
         CATransform3D ltrans = leftImgView.layer.transform;
         
-        ltrans.m34 = 1/100.0;
+        ltrans.m34 = 1/500.0;
         
         ltrans = CATransform3DRotate(ltrans, -M_PI/4, 0, 1, 0);
         
@@ -192,25 +193,37 @@ double c = 100;
         
         CATransform3D trans = imgView.layer.transform;
         
-        trans.m34 = -1/100.0;
-        CATransform3D rotateTransform = CATransform3DRotate(trans, -M_PI/4, 0, 1, 0);
-        // 移动(这里的y坐标是平面移动的的距离,我们要把他转换成3D移动的距离.这是关键,没有它,图片就没办法很好地对接。)
-    
-        CATransform3D moveTransform = CATransform3DMakeAffineTransform(CGAffineTransformMakeTranslation( -(100-2*leftImgView.frame.size.width), 0));
-        // 合并
-        CATransform3D concatTransform = CATransform3DConcat(rotateTransform, moveTransform);
-        imgView.layer.transform =concatTransform;
+        trans.m34 = 1/500.0;
+        CATransform3D rotateTransform = CATransform3DRotate(trans, M_PI/4, 0, 1, 0);
+
+        imgView.layer.transform =rotateTransform;
         
         CATransform3D rtrans = rightImgView.layer.transform;
-        rtrans.m34 = 1/100.0;
+        rtrans.m34 = 1/500.0;
         CATransform3D rrotateTransform = CATransform3DRotate(rtrans, -M_PI/4, 0, 1, 0);
-        // 移动(这里的y坐标是平面移动的的距离,我们要把他转换成3D移动的距离.这是关键,没有它,图片就没办法很好地对接。)
-        CATransform3D rmoveTransform = CATransform3DMakeAffineTransform(CGAffineTransformMakeTranslation(-(100-2*imgView.frame.size.width), 0));
-        // 合并
-        CATransform3D rconcatTransform = CATransform3DConcat(rrotateTransform, rmoveTransform);
-        rightImgView.layer.transform =rconcatTransform;
+   
+        rightImgView.layer.transform =rrotateTransform;
         
-    }];
+        CATransform3D lstrans = lastImgView.layer.transform;
+        lstrans.m34 = 1/500.0;
+        CATransform3D lsrotateTransform = CATransform3DRotate(lstrans, M_PI/4, 0, 1, 0);
+    
+        lastImgView.layer.transform =lsrotateTransform;
+        
+        
+        imgView.layer.transform = [self makeWith:rotateTransform and:a - leftImgView.frame.size.width - imgView.frame.size.width];
+        
+        rightImgView.layer.transform = [self makeWith:rrotateTransform and:a - leftImgView.frame.size.width - imgView.frame.size.width] ;
+        
+        lastImgView.layer.transform = [self makeWith:lsrotateTransform and:c - rightImgView.frame.size.width - lastImgView.frame.size.width + a - leftImgView.frame.size.width - imgView.frame.size.width];
+    
+        
+    } completion:^(BOOL finished) {
+        a = leftImgView.frame.size.width + imgView.frame.size.width;
+        
+        c = rightImgView.frame.size.width + lastImgView.frame.size.width;
+        
+    }] ;
     
 
     
