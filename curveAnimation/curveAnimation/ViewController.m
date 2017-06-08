@@ -13,6 +13,7 @@
 {
 
     UIView *moveView;
+    CurveView *curveView;
 
 }
 @end
@@ -24,11 +25,11 @@
     // Do any additional setup after loading the view, typically from a nib.
 
     //
-    CurveView *curveView = [[CurveView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    curveView = [[CurveView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     curveView.width = 500;
     curveView.hY = -400;
-    
-    self.view = curveView;
+    curveView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:curveView];
     
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -84,7 +85,7 @@
 -(double)calculateWith:(double)x{
 
     
-    return sqrt(pow(500, 2) - pow(x - self.view.bounds.size.width/2, 2))-400;
+    return sqrt(pow(curveView.width, 2) - pow(x - self.view.bounds.size.width/2, 2))+curveView.hY;
 
 }
 
