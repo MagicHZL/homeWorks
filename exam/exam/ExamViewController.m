@@ -10,8 +10,9 @@
 #import "ExamCell.h"
 #import "AnwsersViewController.h"
 #import "TestModel.h"
+#import "TimeObj.h"
 
-@interface ExamViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,TableCellDelgate>
+@interface ExamViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,TableCellDelgate,TimeObjWeak>
 {
 
     NSInteger overall;
@@ -21,8 +22,10 @@
     UICollectionView *collection;
     NSMutableDictionary *qestionAnswers;
     UIView *topView;
+    NSTimer *timer;
 
 }
+@property (nonatomic,strong) TimeObj *timerTarget;
 
 @end
 
@@ -39,7 +42,10 @@
     [btn addTarget:self action:@selector(answersView) forControlEvents:UIControlEventTouchUpInside];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(changeTime:) userInfo:nil repeats:YES];
+    
+    _timerTarget = [[TimeObj alloc] init];
+    _timerTarget.weak = self;
+    timer = [NSTimer scheduledTimerWithTimeInterval:1 target:_timerTarget selector:@selector(timeActionForObj) userInfo:nil repeats:YES];
     
     overall = 60 * 5;
     self.view.backgroundColor = [UIColor whiteColor];
@@ -110,6 +116,26 @@
 
 }
 
+-(void)timeActionForWeak
+{
+
+//    NSLog(@"123");
+    overall--;
+    
+    
+    time.text = [NSString stringWithFormat:@"%.2ld:%.2ld",overall/60,overall%60];
+    
+    
+    if (overall == 0) {
+        
+        [timer invalidate];
+        timer = nil;
+        
+        
+    }
+
+
+}
 
 -(void)answersView{
 
@@ -119,12 +145,14 @@
     anwsers.questions = [tests copy];
     anwsers.dic = [qestionAnswers copy];
     
-//    __weak typeof(self) weakSelf = self;
+    __weak typeof(collection) weakCollection = collection;
+    __weak typeof(btn) weakBtn = btn;
     [anwsers setGoQestion:^(NSIndexPath *index){
     
-        [collection scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+        [weakCollection scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
         
-        [btn setTitle:[NSString stringWithFormat:@"%ld/%ld",(index.row +1),tests.count] forState:UIControlStateNormal];
+        [weakBtn setTitle:[NSString stringWithFormat:@"%ld/%ld",(index.row +1),tests.count] forState:UIControlStateNormal];
+        
     }];
     
     [self.navigationController pushViewController:anwsers animated:YES];
@@ -159,7 +187,7 @@
 }
 
 
--(void)changeTime:(NSTimer*)timer{
+-(void)changeTime:(NSTimer*)ti{
 
     overall--;
   
@@ -169,11 +197,13 @@
     
     if (overall == 0) {
         
-        [timer invalidate];
-        timer = nil;
+        [ti invalidate];
+        ti = nil;
         
         
     }
+
+//    NSLog(@"a===%d",a);s
     
 }
 
@@ -200,6 +230,17 @@
     
     NSLog(@"%@",qestionAnswers);
 
+
+}
+
+
+
+-(void)dealloc{
+
+    NSLog(@"dealloc");
+    
+    [timer invalidate];
+    timer = nil;
 
 }
 

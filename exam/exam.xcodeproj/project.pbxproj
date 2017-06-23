@@ -13,6 +13,13 @@
 		081093C01EFA6B76008F4059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 081093BE1EFA6B76008F4059 /* Main.storyboard */; };
 		081093C21EFA6B76008F4059 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 081093C11EFA6B76008F4059 /* Assets.xcassets */; };
 		081093C51EFA6B76008F4059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 081093C31EFA6B76008F4059 /* LaunchScreen.storyboard */; };
+		0819980A1EFCA21100E51F6F /* TimeObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 081998091EFCA21100E51F6F /* TimeObj.m */; };
+		0819980E1EFCA5F600E51F6F /* ExamReslutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0819980C1EFCA5F600E51F6F /* ExamReslutViewController.m */; };
+		0819980F1EFCA5F600E51F6F /* ExamReslutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0819980D1EFCA5F600E51F6F /* ExamReslutViewController.xib */; };
+		081998121EFCAA3400E51F6F /* test_failure_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 081998101EFCAA3400E51F6F /* test_failure_img@2x.png */; };
+		081998131EFCAA3400E51F6F /* test_success_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 081998111EFCAA3400E51F6F /* test_success_img@2x.png */; };
+		081998181EFCBCBF00E51F6F /* CircleLableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 081998151EFCBCBF00E51F6F /* CircleLableView.m */; };
+		081998191EFCBCBF00E51F6F /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 081998171EFCBCBF00E51F6F /* CircleView.m */; };
 		081C5A351EFB4FCB00E7AF9B /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 081C5A341EFB4FCB00E7AF9B /* TestModel.m */; };
 		081C5A381EFB74D900E7AF9B /* AnwsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 081C5A371EFB74D900E7AF9B /* AnwsersViewController.m */; };
 		081C5A3B1EFB8C7D00E7AF9B /* AnsersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 081C5A3A1EFB8C7D00E7AF9B /* AnsersCell.m */; };
@@ -35,6 +42,17 @@
 		081093C11EFA6B76008F4059 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		081093C41EFA6B76008F4059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		081093C61EFA6B76008F4059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		081998081EFCA21100E51F6F /* TimeObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeObj.h; sourceTree = "<group>"; };
+		081998091EFCA21100E51F6F /* TimeObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeObj.m; sourceTree = "<group>"; };
+		0819980B1EFCA5F600E51F6F /* ExamReslutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamReslutViewController.h; sourceTree = "<group>"; };
+		0819980C1EFCA5F600E51F6F /* ExamReslutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamReslutViewController.m; sourceTree = "<group>"; };
+		0819980D1EFCA5F600E51F6F /* ExamReslutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExamReslutViewController.xib; sourceTree = "<group>"; };
+		081998101EFCAA3400E51F6F /* test_failure_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_failure_img@2x.png"; sourceTree = "<group>"; };
+		081998111EFCAA3400E51F6F /* test_success_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_success_img@2x.png"; sourceTree = "<group>"; };
+		081998141EFCBCBF00E51F6F /* CircleLableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleLableView.h; sourceTree = "<group>"; };
+		081998151EFCBCBF00E51F6F /* CircleLableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleLableView.m; sourceTree = "<group>"; };
+		081998161EFCBCBF00E51F6F /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		081998171EFCBCBF00E51F6F /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		081C5A331EFB4FCB00E7AF9B /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		081C5A341EFB4FCB00E7AF9B /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
 		081C5A361EFB74D900E7AF9B /* AnwsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnwsersViewController.h; sourceTree = "<group>"; };
@@ -82,6 +100,8 @@
 		081093B41EFA6B76008F4059 /* exam */ = {
 			isa = PBXGroup;
 			children = (
+				081998101EFCAA3400E51F6F /* test_failure_img@2x.png */,
+				081998111EFCAA3400E51F6F /* test_success_img@2x.png */,
 				081093B81EFA6B76008F4059 /* AppDelegate.h */,
 				081093B91EFA6B76008F4059 /* AppDelegate.m */,
 				081093BB1EFA6B76008F4059 /* ViewController.h */,
@@ -89,6 +109,15 @@
 				081093BC1EFA6B76008F4059 /* ViewController.m */,
 				08C222AF1EFA6BEC00D06A10 /* ExamViewController.h */,
 				08C222B01EFA6BEC00D06A10 /* ExamViewController.m */,
+				081998081EFCA21100E51F6F /* TimeObj.h */,
+				081998091EFCA21100E51F6F /* TimeObj.m */,
+				081998141EFCBCBF00E51F6F /* CircleLableView.h */,
+				081998151EFCBCBF00E51F6F /* CircleLableView.m */,
+				081998161EFCBCBF00E51F6F /* CircleView.h */,
+				081998171EFCBCBF00E51F6F /* CircleView.m */,
+				0819980B1EFCA5F600E51F6F /* ExamReslutViewController.h */,
+				0819980C1EFCA5F600E51F6F /* ExamReslutViewController.m */,
+				0819980D1EFCA5F600E51F6F /* ExamReslutViewController.xib */,
 				081C5A361EFB74D900E7AF9B /* AnwsersViewController.h */,
 				081C5A371EFB74D900E7AF9B /* AnwsersViewController.m */,
 				081C5A391EFB8C7D00E7AF9B /* AnsersCell.h */,
@@ -182,7 +211,10 @@
 				089FA3D51EFA701F004E4A3D /* notice_ic@2x.png in Resources */,
 				081093C01EFA6B76008F4059 /* Main.storyboard in Resources */,
 				089FA3E01EFA7763004E4A3D /* TableCell.xib in Resources */,
+				081998131EFCAA3400E51F6F /* test_success_img@2x.png in Resources */,
+				0819980F1EFCA5F600E51F6F /* ExamReslutViewController.xib in Resources */,
 				089FA3D81EFA726F004E4A3D /* exam.json in Resources */,
+				081998121EFCAA3400E51F6F /* test_failure_img@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,11 +225,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0819980A1EFCA21100E51F6F /* TimeObj.m in Sources */,
+				081998181EFCBCBF00E51F6F /* CircleLableView.m in Sources */,
 				089FA3DF1EFA7763004E4A3D /* TableCell.m in Sources */,
 				081093BD1EFA6B76008F4059 /* ViewController.m in Sources */,
 				089FA3DB1EFA74A2004E4A3D /* ExamCell.m in Sources */,
 				08C222B21EFA6BEC00D06A10 /* ExamViewController.m in Sources */,
 				081C5A381EFB74D900E7AF9B /* AnwsersViewController.m in Sources */,
+				0819980E1EFCA5F600E51F6F /* ExamReslutViewController.m in Sources */,
+				081998191EFCBCBF00E51F6F /* CircleView.m in Sources */,
 				081C5A3B1EFB8C7D00E7AF9B /* AnsersCell.m in Sources */,
 				081093BA1EFA6B76008F4059 /* AppDelegate.m in Sources */,
 				081C5A351EFB4FCB00E7AF9B /* TestModel.m in Sources */,
