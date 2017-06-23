@@ -27,7 +27,9 @@
 
     self.testId = [dic[@"id"] intValue];
     self.title = dic[@"name"];
-
+    NSString *isMu = dic[@"isMutible"];
+    self.isMutible = [isMu boolValue];
+    
     NSMutableArray *arr = [NSMutableArray array];
     
     for (int i = 1; i<10; i++) {

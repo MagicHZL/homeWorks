@@ -24,5 +24,5 @@
 @property(nonatomic,weak)id<TableCellDelgate> delgate;
 @property(nonatomic,strong)UITableView *table;
 @property(nonatomic,strong)TestModel *model;
-@property(nonatomic,copy)NSString *answer;
+@property(nonatomic,strong)NSArray *answer;
 @end

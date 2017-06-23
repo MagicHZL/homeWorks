@@ -17,6 +17,7 @@
     self.btn.layer.cornerRadius = 20;
     self.btn.layer.borderColor = [UIColor blueColor].CGColor;
     self.btn.layer.borderWidth = 1;
+    self.btn.userInteractionEnabled = NO;
     
 }
 

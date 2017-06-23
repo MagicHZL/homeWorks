@@ -130,8 +130,7 @@
         
         [timer invalidate];
         timer = nil;
-        
-        
+    
     }
 
 
@@ -181,7 +180,7 @@
     cell.delgate = self;
     TestModel *model = tests[indexPath.row];
     cell.model = model;
-    cell.answer = qestionAnswers[[NSString stringWithFormat:@"%d",model.testId]];
+    cell.answer = [qestionAnswers[[NSString stringWithFormat:@"%d",model.testId]] copy];
     return cell;
 
 }
@@ -224,7 +223,38 @@
     NSString *testId = [NSString stringWithFormat:@"%d",model.testId] ;
     NSString *answer = model.questions[index];
     
-    [qestionAnswers setValue:answer forKey:testId];
+    NSMutableArray *arr;
+    
+    if (qestionAnswers[testId]) {
+        
+        arr = qestionAnswers[testId];
+        if (!model.isMutible) {
+            //单选
+            [arr removeAllObjects];
+            [arr addObject:answer];
+            
+        }else{
+            
+            //多选
+            if ([arr indexOfObject:answer]!=NSNotFound) {
+                
+                    [arr removeObject:answer];
+            }else{
+                
+                  [arr addObject: answer];
+
+            }
+                        
+        }
+     
+        
+    }else{
+        
+        arr = [NSMutableArray array];
+        [arr addObject:answer];
+        [qestionAnswers setValue:arr forKey:testId];
+    
+    }
     
     [collection reloadItemsAtIndexPaths:@[ipath]];
     

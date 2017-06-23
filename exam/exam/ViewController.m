@@ -31,13 +31,13 @@
 }
 - (IBAction)goExam:(id)sender {
     
-//    ExamViewController *exam = [[ExamViewController alloc] init];
+    ExamViewController *exam = [[ExamViewController alloc] init];
+    
+    [self.navigationController pushViewController:exam animated:YES];
+ 
+//  ExamReslutViewController *exam = [[ExamReslutViewController alloc] init];
 //    
-//    [self.navigationController pushViewController:exam animated:YES];
-    
-        ExamReslutViewController *exam = [[ExamReslutViewController alloc] init];
-    
-        [self.navigationController pushViewController:exam animated:YES];
+//  [self.navigationController pushViewController:exam animated:YES];
 
     
 }

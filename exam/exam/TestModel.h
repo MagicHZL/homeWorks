@@ -13,7 +13,7 @@
 @property(nonatomic,assign)int testId;
 @property(nonatomic,copy)NSString* title;
 @property(nonatomic,strong)NSArray *questions;
-
+@property(nonatomic,assign)BOOL isMutible;
 
 -(void)getData:(NSDictionary*)dic;
 

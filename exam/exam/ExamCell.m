@@ -70,9 +70,8 @@
     NSArray *ABC = @[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H"];
     [cell.btn setTitle:ABC[indexPath.row] forState:UIControlStateNormal];
     
-    if ([cell.quetion.text isEqualToString:self.answer]) {
+    if ([self.answer indexOfObject:cell.quetion.text]!=NSNotFound && self.answer!=nil) {
         
-
         cell.btn.backgroundColor = [UIColor blueColor];
         [cell.btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
